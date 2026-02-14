@@ -16,25 +16,25 @@ box-sizing:border-box;
 body{
 background:#f8f5f2;
 font-family:'Cormorant Garamond',serif;
-overflow-x:hidden; /* ✅ allow vertical scroll on mobile */
+overflow-x:hidden;
 }
 
 /* ============ INTRO SECTION ============ */
 
 .intro{
-min-height:100vh; /* ✅ better than fixed height */
+min-height:100vh;
 display:flex;
 flex-direction:column;
-justify-content:center;
+justify-content:flex-start;   /* ✅ FIXED */
 align-items:center;
 text-align:center;
-padding:40px 20px;
+padding:80px 20px 40px 20px;  /* ✅ better spacing */
 transition:1s;
 }
 
 .intro h1{
 font-family:'Great Vibes',cursive;
-font-size:clamp(26px, 5vw, 42px); /* ✅ responsive font */
+font-size:clamp(24px, 5vw, 42px);
 color:#7a1c1c;
 margin-bottom:30px;
 line-height:1.6;
@@ -64,7 +64,7 @@ display:none;
 min-height:100vh;
 justify-content:center;
 align-items:center;
-gap:clamp(20px,4vw,60px); /* ✅ responsive gap */
+gap:clamp(20px,4vw,60px);
 flex-wrap:wrap;
 padding:40px 20px;
 position:relative;
@@ -74,7 +74,7 @@ z-index:1;
 /* الظرف */
 
 .envelope{
-width:clamp(160px, 30vw, 240px); /* ✅ responsive size */
+width:clamp(160px, 30vw, 240px);
 height:clamp(110px, 20vw, 160px);
 background:#ffffff;
 position:relative;
@@ -97,11 +97,10 @@ content:"";
 position:absolute;
 top:0;
 left:0;
-width:0;
-height:0;
-border-left:50% solid transparent;
-border-right:50% solid transparent;
-border-top:50% solid #f0f0f0;
+width:100%;
+height:50%;
+background:#f0f0f0;
+clip-path:polygon(0 0, 50% 100%, 100% 0);
 z-index:2;
 }
 
@@ -112,11 +111,10 @@ content:"";
 position:absolute;
 bottom:0;
 left:0;
-width:0;
-height:0;
-border-left:50% solid transparent;
-border-right:50% solid transparent;
-border-bottom:50% solid #fafafa;
+width:100%;
+height:50%;
+background:#fafafa;
+clip-path:polygon(0 100%, 50% 0, 100% 100%);
 }
 
 /* الريبون */
@@ -180,12 +178,12 @@ display:none;
 justify-content:center;
 align-items:center;
 z-index:9999;
-padding:20px; /* ✅ mobile safe spacing */
+padding:20px;
 }
 
 .letter{
 background:#fff;
-width:min(600px, 95vw); /* ✅ responsive modal */
+width:min(600px, 95vw);
 padding:clamp(20px,4vw,40px);
 border-radius:12px;
 text-align:center;
@@ -230,7 +228,7 @@ border-radius:6px;
 margin-top:20px;
 }
 
-/* ✅ extra small phones */
+/* extra small phones */
 
 @media (max-width:400px){
 .envelopes-section{
@@ -243,6 +241,7 @@ height:95px;
 }
 }
 </style>
+
 </head>
 
 <body>
