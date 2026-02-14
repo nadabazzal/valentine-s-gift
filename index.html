@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Muaz 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#f8f5f2;
+font-family:'Cormorant Garamond',serif;
+overflow:hidden;
+}
+
+/* ============ INTRO SECTION ============ */
+
+.intro{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+transition:1s;
+}
+
+.intro h1{
+font-family:'Great Vibes',cursive;
+font-size:42px;
+color:#7a1c1c;
+margin-bottom:30px;
+line-height:1.6;
+max-width:700px;
+}
+
+.open-btn{
+padding:15px 40px;
+background:#7a1c1c;
+color:white;
+border:none;
+font-size:18px;
+letter-spacing:1px;
+cursor:pointer;
+transition:0.4s;
+}
+
+.open-btn:hover{
+background:#a62b2b;
+}
+
+/* ============ ENVELOPES SECTION ============ */
+
+.envelopes-section{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+gap:60px;
+flex-wrap:wrap;
+padding:40px;
+position:relative;
+z-index:1;
+}
+
+/* الظرف */
+.envelope{
+width:240px;
+height:160px;
+background:#ffffff;
+position:relative;
+cursor:pointer;
+transition:0.4s;
+border-radius:6px;
+box-shadow:0 15px 35px rgba(0,0,0,0.12);
+overflow:hidden;
+z-index:1;
+}
+
+.envelope:hover{
+transform:translateY(-8px) scale(1.03);
+}
+
+/* غطاء الظرف */
+.envelope::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:0;
+border-left:120px solid transparent;
+border-right:120px solid transparent;
+border-top:90px solid #f0f0f0;
+z-index:2;
+}
+
+/* الجزء السفلي */
+.envelope::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:0;
+height:0;
+border-left:120px solid transparent;
+border-right:120px solid transparent;
+border-bottom:90px solid #fafafa;
+}
+
+/* الريبون */
+.ribbon{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+height:12px;
+background:#7a1c1c;
+z-index:3;
+}
+
+/* 🎀 أطراف البابيونة */
+.ribbon::before,
+.ribbon::after{
+content:"";
+position:absolute;
+top:-10px;
+width:26px;
+height:26px;
+background:#7a1c1c;
+border-radius:4px;
+}
+
+.ribbon::before{
+left:50%;
+transform:translateX(-140%) rotate(45deg);
+}
+
+.ribbon::after{
+left:50%;
+transform:translateX(40%) rotate(45deg);
+}
+
+/* عقدة البابيونة */
+.ribbon span{
+position:absolute;
+left:50%;
+top:-6px;
+transform:translateX(-50%);
+width:14px;
+height:14px;
+background:#5e1414;
+border-radius:50%;
+}
+
+/* ============ LETTER MODAL ============ */
+
+.letter-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999; /* الإصلاح المهم */
+}
+
+.letter{
+background:#fff;
+width:600px;
+padding:40px;
+border-radius:10px;
+text-align:center;
+animation:fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:scale(0.9);}
+to{opacity:1;transform:scale(1);}
+}
+
+.letter h2{
+color:#b03030;
+font-size:32px;
+margin-bottom:15px;
+}
+
+.letter .tofrom{
+margin-bottom:20px;
+font-size:18px;
+}
+
+.letter p{
+font-family:'Great Vibes',cursive;
+font-size:26px;
+color:#7a1c1c;
+margin-top:20px;
+line-height:1.6;
+}
+
+.close-btn{
+margin-top:25px;
+padding:10px 30px;
+background:#7a1c1c;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.gift-content{
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="intro" id="intro">
+<h1>🤍
+حبيبي ورفيق دربي معاذ 🤍<br>
+فكرت كتير شو ممكن إهديك اليوم بالفالنتاين <br>
+وقررت اصنعلك شي من قلبي
+يمكن الهدية صغيرة بالحجم
+بس حطيت فيها كل حبي و صنعتها بكل حب . 
+كل ما تشتقلي افتح هالصندوق<br>
+واسحب رسالة منو  
+</h1>
+
+<button class="open-btn" onclick="openEnvelopes()">افتح لتشوف شو مخبيلك</button>
+</div>
+
+<!-- ENVELOPES -->
+<div class="envelopes-section" id="envelopes">
+<div class="envelope" onclick="openLetter()"><div class="ribbon"><span></span></div></div>
+<div class="envelope" onclick="openLetter()"><div class="ribbon"><span></span></div></div>
+<div class="envelope" onclick="openLetter()"><div class="ribbon"><span></span></div></div>
+<div class="envelope" onclick="openLetter()"><div class="ribbon"><span></span></div></div>
+<div class="envelope" onclick="openLetter()"><div class="ribbon"><span></span></div></div>
+<div class="envelope" onclick="openLetter()"><div class="ribbon"><span></span></div></div>
+<div class="envelope" onclick="openLetter()"><div class="ribbon"><span></span></div></div>
+</div>
+
+<!-- LETTER MODAL -->
+<div class="letter-modal" id="letterModal">
+<div class="letter">
+<h2>A LOVE LETTER</h2>
+
+<div class="tofrom">
+TO: Muaz<br>
+FROM: Your Future Wife 🤍
+</div>
+
+<p id="randomMessage"></p>
+
+<div class="gift-content" id="giftContent"></div>
+
+<button class="close-btn" onclick="closeLetter()">سكر الرسالة</button>
+</div>
+</div>
+
+<script>
+const messages = [
+"🤍بشتقلك طول الوقت بطريقة مو طبيعية بس بحب هالشعور لانو بعرف انك نصيبي وما حدا رح ياخدك مني  🤍",
+"🤍بحبك يا اجمل صدفة بهالدنيا و اجمل  قرار اخدتو بحياتي اهخخخ بحبك يا الشخص الوحيد اللي كل ما بفكر فيك بحس بدي نتزوج عشان كون حدك طول العمر   🤍",
+"🤍بحبك يا معاذ بحبك يا حبيبي  بحبك يا مستقبلي بحبك يا عالمي بحبك يا املي بحبك يا قمري بحبك يا سعادتي احبك يا اماني احبك يا عشيقي احبك يا جنوني احبك يا ادماني احبك يا بابا احبك يا اخي احبك يا سندي احبك يا طفلي الصغير احبك يا نصي التاني احبك يا رفيق دربي احبك كل حياتي احبك احبك احببببكككك احححححححححببببببببببببككككككك 🤍",
+"🤍 لا تخاف يا حبيبي من المستقبل رح انتظرك مهما صار و ما رح اتزوج غيرك يا نور عيوني رح انتظرك حتى تبني نفسك و ابقى حدك و ادعمك و اساعدك و اسندك و ادعيلك و اقويك و حنبني بيتنا حجر حجر و نحقق حلمنا و نعيش فيه لاخر لحظة بحياتنا و نجيب اكيت اطفال بالدنيا كلها سوا  🤍",
+"🤍أنا بدي عمر كامل معك  بدي كل لحظة من حياتي تكون حدك بدي ابقى بحضنك 24 ساعة باليوم الواحد اهخخخ بدي ياك يا معاذ بسس 🤍",
+"مين طفلي الصغير الزغنون الحلو الشطور ؟ مين دلوعي الوحيد اللي مسلمتو كل قلبي لالو لحالو بسسسسس ؟ لك هاد الحلو اللي شاغل بالي و عقلي و قلبي و تفكيرييي ميييينننن ؟ هاد  معوذتي حبيبي الشاطر الغود بوووويييي يقبر قلبي ما اغلااااه  بسرعةة تعا لحضني بسرررعةةةة فتحتلك ايديي", 
+"هاد الكارت حبيت حط فيه بس حضني و حناني لما تفتحو بدي ياك تحس فيهن كتييير يا نور عيوني اهدا و ارتاح ما في شي حيأذيك طالما انا معك اوكي ؟ "
+
+];
+
+
+function openEnvelopes(){
+document.getElementById("intro").style.display="none";
+document.getElementById("envelopes").style.display="flex";
+}
+
+function openLetter(){
+let randomMsg = messages[Math.floor(Math.random()*messages.length)];
+
+
+document.getElementById("randomMessage").innerText=randomMsg;
+
+
+document.getElementById("letterModal").style.display="flex";
+}
+
+function closeLetter(){
+document.getElementById("letterModal").style.display="none";
+}
+</script>
+
+</body>
+</html>
